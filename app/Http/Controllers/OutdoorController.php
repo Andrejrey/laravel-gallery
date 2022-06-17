@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Outdoor;
 use App\Http\Requests\StoreOutdoorRequest;
 use App\Http\Requests\UpdateOutdoorRequest;
@@ -16,7 +17,8 @@ class OutdoorController extends Controller
      */
     public function index()
     {
-        //
+        $data = Outdoor::all();
+        return view('admin.outdoors.index', compact('data'));
     }
 
     /**

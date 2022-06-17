@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Indoor;
 use App\Http\Requests\StoreIndoorRequest;
 use App\Http\Requests\UpdateIndoorRequest;
@@ -16,7 +17,8 @@ class IndoorController extends Controller
      */
     public function index()
     {
-        //
+        $data = Indoor::all();
+        return view('admin.indoors.index', compact('data'));
     }
 
     /**

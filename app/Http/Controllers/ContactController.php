@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Contact;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
@@ -16,7 +17,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $data = Contact::all();
+        return view('admin.contacts.index', compact('data'));
     }
 
     /**

@@ -16,7 +16,8 @@ class AboutMeController extends Controller
      */
     public function index()
     {
-        //
+        $data = AboutMe::all();
+        return view('admin.about_me.index', compact('data'));
     }
 
     /**
