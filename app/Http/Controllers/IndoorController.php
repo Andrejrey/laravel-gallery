@@ -17,8 +17,8 @@ class IndoorController extends Controller
      */
     public function index()
     {
-        $data = Indoor::all();
-        return view('admin.indoors.index', compact('data'));
+        $indoors = Indoor::all();
+        return view('admin.indoors.index', compact('indoors'));
     }
 
     /**
@@ -61,7 +61,7 @@ class IndoorController extends Controller
      */
     public function edit(Indoor $indoor)
     {
-        //
+        return view('admin.indoors.edit', compact('indoor'));
     }
 
     /**

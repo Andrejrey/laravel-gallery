@@ -16,8 +16,8 @@ class AboutMeController extends Controller
      */
     public function index()
     {
-        $data = AboutMe::all();
-        return view('admin.about_me.index', compact('data'));
+        $aboutMe = AboutMe::all();
+        return view('admin.about_me.index', compact('aboutMe'));
     }
 
     /**
@@ -60,7 +60,7 @@ class AboutMeController extends Controller
      */
     public function edit(AboutMe $aboutMe)
     {
-        //
+        return view('admin.about_me.edit', compact('aboutMe'));
     }
 
     /**
@@ -83,6 +83,7 @@ class AboutMeController extends Controller
      */
     public function destroy(AboutMe $aboutMe)
     {
-        //
+        $aboutMe->delete();
+        return redirect('/about_me')->with('success', 'About Me deleted successfully');
     }
 }

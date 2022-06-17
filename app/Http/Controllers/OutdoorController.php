@@ -17,8 +17,8 @@ class OutdoorController extends Controller
      */
     public function index()
     {
-        $data = Outdoor::all();
-        return view('admin.outdoors.index', compact('data'));
+        $outdoors = Outdoor::all();
+        return view('admin.outdoors.index', compact('outdoors'));
     }
 
     /**
@@ -61,7 +61,7 @@ class OutdoorController extends Controller
      */
     public function edit(Outdoor $outdoor)
     {
-        //
+        return view('admin.outdoors.edit', compact('outdoor'));
     }
 
     /**

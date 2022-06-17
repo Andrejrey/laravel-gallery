@@ -17,8 +17,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $data = Contact::all();
-        return view('admin.contacts.index', compact('data'));
+        $contacts = Contact::all();
+        return view('admin.contacts.index', compact('contacts'));
     }
 
     /**
@@ -61,7 +61,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('admin.contacts.edit', compact('contact'));
     }
 
     /**
