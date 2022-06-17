@@ -41,6 +41,7 @@
         </nav>
 
         <main class="py-4">
+            <x-flash-message />
             @yield('content')
         </main>
     </div>
