@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutMeController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\IndoorController;
+use App\Http\Controllers\OutdoorController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +26,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::group([
+    'middleware' => 'auth',
+], function () {
+Route::resource('about_me',AboutMeController::class );
+Route::resource('contact',ContactController::class );
+Route::resource('indoor',IndoorController::class );
+Route::resource('outdoor',OutdoorController::class );
+});
