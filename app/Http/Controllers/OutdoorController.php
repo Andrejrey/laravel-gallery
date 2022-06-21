@@ -73,7 +73,8 @@ class OutdoorController extends Controller
      */
     public function update(UpdateOutdoorRequest $request, Outdoor $outdoor)
     {
-        //
+        $outdoor->update($request->validated());
+        return redirect('/outdoor')->with('success', 'Outdoor Image updated successfully');
     }
 
     /**

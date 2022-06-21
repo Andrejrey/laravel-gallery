@@ -73,7 +73,8 @@ class IndoorController extends Controller
      */
     public function update(UpdateIndoorRequest $request, Indoor $indoor)
     {
-        //
+        $indoor->update($request->validated());
+        return redirect('/indoor')->with('success', 'Indoor Image updated successfully');
     }
 
     /**

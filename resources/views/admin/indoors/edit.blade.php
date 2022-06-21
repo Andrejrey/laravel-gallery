@@ -2,7 +2,7 @@
 @section('content')
     <h1>Update Contacts</h1>
 
-    <x-form method="put" action="" >
+    <x-form method="put" action="{{ route('indoor.update', $indoor) }}" >
         @csrf
         @bind($indoor)
         <x-form-input type="text" class="mb-3" name="filename" label="{{ __('Filename') }}" />

@@ -24,7 +24,7 @@ class StoreAboutMeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'  => 'required',
+            'title'  => 'required',
             'subtitle'   => 'required',
             'text'   => '',
             'img '  => '',
