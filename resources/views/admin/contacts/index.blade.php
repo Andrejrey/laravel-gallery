@@ -2,13 +2,17 @@
 @section('content')
 <h1>Contact</h1>
 <div class="col-md-12 text-end mt-4" style="margin-bottom: 10px;">
+    <a class="btn btn-primary" href="">
+        {{ __('Add Contact') }}
+    </a>
 </div>
+<table class="table ta
 <table class="table table-striped">
     @foreach($contacts as $contact)
     <tr>
         <td>{{$contact->subject}}</td>
         <td>
-            <x-form action="" method="post">
+            <x-form action="{{route('contact.destroy', $contact)}}" method="post">
                 <a class="btn btn-primary" href="{{ route('contact.edit', $contact) }}">{{ __('Edit') }}</a>
                 @csrf
                 @method('delete')

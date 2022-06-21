@@ -2,8 +2,8 @@
 @section('content')
     <h1>Update Biography</h1>
 
-    <x-form method="put" action="" >
-        @csrf
+    <x-form action="{{ route('about_me.update', $aboutMe) }}" >
+        @method('put')
         @bind($aboutMe)
         <x-form-input type="text" class="mb-3" name="title" label="{{ __('Title') }}" />
         <x-form-input type="text" class="mb-3" name="subtitle" label="{{ __('Subtitle') }}" />

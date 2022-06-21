@@ -84,6 +84,7 @@ class IndoorController extends Controller
      */
     public function destroy(Indoor $indoor)
     {
-        //
+        $indoor->delete();
+        return redirect('/indoor')->with('success', 'Indoor Image deleted successfully');
     }
 }

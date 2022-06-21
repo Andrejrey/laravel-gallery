@@ -84,6 +84,7 @@ class OutdoorController extends Controller
      */
     public function destroy(Outdoor $outdoor)
     {
-        //
+        $outdoor->delete();
+        return redirect('/outdoor')->with('success', 'Outdoor Image deleted successfully');
     }
 }

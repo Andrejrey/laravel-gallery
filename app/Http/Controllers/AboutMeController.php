@@ -72,7 +72,8 @@ class AboutMeController extends Controller
      */
     public function update(UpdateAboutMeRequest $request, AboutMe $aboutMe)
     {
-        //
+        $aboutMe->update($request->validated());
+        return redirect('/about_me')->with('success', 'About Me updated successfully');
     }
 
     /**

@@ -2,13 +2,16 @@
 @section('content')
 <h1>Outdoor</h1>
 <div class="col-md-12 text-end mt-4" style="margin-bottom: 10px;">
+    <a class="btn btn-primary" href="{{route('outdoor.create')}}">
+        {{ __('Add Outdoor Image') }}
+    </a>
 </div>
 <table class="table table-striped">
     @foreach($outdoors as $outdoor)
     <tr>
-        <td></td>
+        <td>{{$outdoor->filename}}</td>
         <td>
-            <x-form action="" method="post">
+            <x-form action="{{route('outdoor.destroy', $outdoor)}}" method="post">
                 <a class="btn btn-primary" href="{{ route('outdoor.edit', $outdoor)}}">{{ __('Edit') }}</a>
                 @csrf
                 @method('delete')

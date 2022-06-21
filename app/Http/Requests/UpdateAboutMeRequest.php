@@ -13,7 +13,7 @@ class UpdateAboutMeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,11 @@ class UpdateAboutMeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'  => 'required',
+            'subtitle'   => 'required',
+            'text'   => '',
+            'img '  => '',
+
         ];
     }
 }
