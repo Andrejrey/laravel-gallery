@@ -27,7 +27,7 @@ class AboutMeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.about_me.create');
     }
 
     /**
@@ -38,7 +38,8 @@ class AboutMeController extends Controller
      */
     public function store(StoreAboutMeRequest $request)
     {
-        //
+        AboutMe::create($request->validated());
+        return redirect('/about_me')->with('success', 'About Me created successfully');
     }
 
     /**

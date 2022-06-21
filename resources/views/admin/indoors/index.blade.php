@@ -2,7 +2,7 @@
 @section('content')
 <h1>Indoor</h1>
 <div class="col-md-12 text-end mt-4" style="margin-bottom: 10px;">
-    <a class="btn btn-primary" href="">
+    <a class="btn btn-primary" href="{{route('indoor.create')}}">
         {{ __('Add Indoor Image') }}
     </a>
 </div>

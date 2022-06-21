@@ -3,7 +3,7 @@
 <h1>About Me</h1>
 
 <div class="col-md-12 text-end mt-4" style="margin-bottom: 10px;">
-    <a class="btn btn-primary" href="">
+    <a class="btn btn-primary" href="{{ route('about_me.create') }}">
         {{ __('Add Biography') }}
     </a>
 </div>

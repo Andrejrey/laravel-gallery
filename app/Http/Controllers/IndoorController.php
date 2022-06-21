@@ -28,7 +28,7 @@ class IndoorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.indoors.create');
     }
 
     /**
@@ -39,7 +39,8 @@ class IndoorController extends Controller
      */
     public function store(StoreIndoorRequest $request)
     {
-        //
+        Indoor::create( $request->validated());
+        return redirect('/indoor')->with('success', 'Indoor Image created successfully' );
     }
 
     /**

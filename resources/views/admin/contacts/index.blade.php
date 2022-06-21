@@ -2,7 +2,7 @@
 @section('content')
 <h1>Contact</h1>
 <div class="col-md-12 text-end mt-4" style="margin-bottom: 10px;">
-    <a class="btn btn-primary" href="">
+    <a class="btn btn-primary" href="{{ route('contact.create') }}">
         {{ __('Add Contact') }}
     </a>
 </div>

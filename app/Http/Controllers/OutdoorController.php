@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+
 use App\Models\Outdoor;
 use App\Http\Requests\StoreOutdoorRequest;
 use App\Http\Requests\UpdateOutdoorRequest;
@@ -28,7 +29,7 @@ class OutdoorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.outdoors.create');
     }
 
     /**
@@ -39,7 +40,8 @@ class OutdoorController extends Controller
      */
     public function store(StoreOutdoorRequest $request)
     {
-        //
+        Outdoor::create( $request->validated());
+        return redirect('/outdoor')->with('success', 'Outdoor Image created successfully' );
     }
 
     /**

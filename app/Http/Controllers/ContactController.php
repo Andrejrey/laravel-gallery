@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+
 use App\Models\Contact;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
@@ -28,7 +29,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.contacts.create');
     }
 
     /**
@@ -39,7 +40,8 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request)
     {
-        //
+        Contact::create($request->validated());
+        return redirect('/contact')->with('success', 'Contact created successfully');
     }
 
     /**
