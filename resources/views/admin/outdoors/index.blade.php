@@ -6,9 +6,9 @@
 <table class="table table-striped">
     @foreach($outdoors as $outdoor)
     <tr>
-        <td></td>
+        <td>{{$outdoor->filename}}</td>
         <td>
-            <x-form action="" method="post">
+            <x-form action="{{route('outdoor.destroy', $outdoor)}}" method="post">
                 <a class="btn btn-primary" href="{{ route('outdoor.edit', $outdoor)}}">{{ __('Edit') }}</a>
                 @csrf
                 @method('delete')

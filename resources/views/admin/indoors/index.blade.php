@@ -8,7 +8,7 @@
     <tr>
         <td>{{$indoor->filename}}</td>
         <td>
-            <x-form action="" method="post">
+            <x-form action="{{route('indoor.destroy', $indoor)}}" method="post">
                 <a class="btn btn-primary" href="{{ route('indoor.edit', $indoor) }}">{{ __('Edit') }}</a>
                 @csrf
                 @method('delete')

@@ -8,7 +8,7 @@
     <tr>
         <td>{{$contact->subject}}</td>
         <td>
-            <x-form action="" method="post">
+            <x-form action="{{route('contact.destroy', $contact)}}" method="post">
                 <a class="btn btn-primary" href="{{ route('contact.edit', $contact) }}">{{ __('Edit') }}</a>
                 @csrf
                 @method('delete')
