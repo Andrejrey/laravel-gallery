@@ -2,6 +2,9 @@
 @section('content')
 <h1>Outdoor</h1>
 <div class="col-md-12 text-end mt-4" style="margin-bottom: 10px;">
+    <a class="btn btn-primary" href="{{route('outdoor.create')}}">
+        {{ __('Add Outdoor Image') }}
+    </a>
 </div>
 <table class="table table-striped">
     @foreach($outdoors as $outdoor)

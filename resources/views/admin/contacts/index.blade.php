@@ -2,7 +2,11 @@
 @section('content')
 <h1>Contact</h1>
 <div class="col-md-12 text-end mt-4" style="margin-bottom: 10px;">
+    <a class="btn btn-primary" href="">
+        {{ __('Add Contact') }}
+    </a>
 </div>
+<table class="table ta
 <table class="table table-striped">
     @foreach($contacts as $contact)
     <tr>
