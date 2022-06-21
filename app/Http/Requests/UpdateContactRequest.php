@@ -13,7 +13,7 @@ class UpdateContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,9 @@ class UpdateContactRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'subject'  => 'required',
+            'email'    => 'required|email',
+            'message'  => ''
         ];
     }
 }

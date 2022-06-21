@@ -73,7 +73,8 @@ class ContactController extends Controller
      */
     public function update(UpdateContactRequest $request, Contact $contact)
     {
-        //
+        $contact->update($request->validated());
+        return redirect('/contact')->with('success', 'Contact updated successfully');
     }
 
     /**

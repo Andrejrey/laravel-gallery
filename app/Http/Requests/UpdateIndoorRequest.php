@@ -13,7 +13,7 @@ class UpdateIndoorRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,9 @@ class UpdateIndoorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'filename'  => 'required',
+            'title'    => '',
+            'description'  => ''
         ];
     }
 }

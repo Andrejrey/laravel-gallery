@@ -2,7 +2,7 @@
 @section('content')
     <h1>Update Contacts</h1>
 
-    <x-form method="put" action="" >
+    <x-form method="put" action="{{ route('contact.update', $contact) }}" >
         @csrf
         @bind($contact)
         <x-form-input type="text" class="mb-3" name="subject" label="{{ __('Subject') }}" />
