@@ -19,7 +19,7 @@ class OutdoorController extends Controller
      */
     public function index()
     {
-        $outdoors = Outdoor::all();
+        $outdoors = Outdoor::paginate(6);
         return view('admin.outdoors.index', compact('outdoors'));
     }
 
