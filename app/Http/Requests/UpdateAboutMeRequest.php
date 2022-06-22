@@ -27,7 +27,7 @@ class UpdateAboutMeRequest extends FormRequest
             'title'  => 'required',
             'subtitle'   => 'required',
             'text'   => '',
-            'img '  => '',
+            'img '  => 'nullable|image',
 
         ];
     }

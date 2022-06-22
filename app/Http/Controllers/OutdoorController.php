@@ -92,6 +92,8 @@ class OutdoorController extends Controller
             $imgName = $file->hashName();
             Storage::disk('outdoor')->putFileAs('', $file, $imgName);
             $validated['filename'] = $imgName;
+        } else {
+            unset($validated['filename']);
         }
 
         $outdoor->update($validated);

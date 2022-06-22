@@ -91,6 +91,8 @@ class IndoorController extends Controller
             $imgName = $file->hashName();
             Storage::disk('indoor')->putFileAs('', $file, $imgName);
             $validated['filename'] = $imgName;
+        } else {
+            unset($validated['filename']);
         }
 
         $indoor->update($validated);

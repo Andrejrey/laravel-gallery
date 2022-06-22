@@ -90,6 +90,8 @@ class AboutMeController extends Controller
             $imgName = $file->hashName();
             Storage::disk('about_me')->putFileAs('', $file, $imgName);
             $validated['img'] = $imgName;
+        } else {
+            unset($validated['filename']);
         }
 
         $aboutMe->update($validated);

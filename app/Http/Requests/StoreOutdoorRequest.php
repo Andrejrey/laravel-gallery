@@ -24,8 +24,8 @@ class StoreOutdoorRequest extends FormRequest
     public function rules()
     {
         return [
-            'filename'  => 'required',
-            'title'    => '',
+            'filename'  => 'required|image',
+            'title'    => 'required',
             'description'  => ''
         ];
     }

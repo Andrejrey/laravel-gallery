@@ -26,8 +26,8 @@ class StoreAboutMeRequest extends FormRequest
         return [
             'title'  => 'required',
             'subtitle'   => 'required',
-            'text'   => '',
-            'img '  => '',
+            'text'   => 'nullable',
+            'img '  => 'nullable|image',
 
         ];
     }
