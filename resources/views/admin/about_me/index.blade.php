@@ -13,7 +13,7 @@
             <td>{{$biography->title}}</td>
             <td>
                 <x-form action="{{route('about_me.destroy', $biography)}}" method="post">
-                    <a class="btn btn-primary" href="{{ route('about_me.edit', $biography) }}">{{ __('Edit') }}</a>
+                    <a class="btn btn-primary delsoft" href="{{ route('about_me.edit', $biography) }}">{{ __('Edit') }}</a>
                     @csrf
                     @method('delete')
                     <x-form-submit type="submit" class="btn btn-danger delsoft">{{ __('Delete') }}</x-form-submit>
