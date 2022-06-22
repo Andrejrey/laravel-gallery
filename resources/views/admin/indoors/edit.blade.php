@@ -2,10 +2,10 @@
 @section('content')
     <h1>Update Contacts</h1>
 
-    <x-form method="put" action="{{ route('indoor.update', $indoor) }}" >
+    <x-form method="put" action="{{ route('indoor.update', $indoor) }}" enctype="multipart/form-data">
         @csrf
         @bind($indoor)
-        <x-form-input type="text" class="mb-3" name="filename" label="{{ __('Filename') }}" />
+        <x-form-input type="file" class="mb-3" name="filename" label="{{ __('Imagedatei') }}:" />
         <x-form-input type="text" class="mb-3" name="title" label="{{ __('Title') }}" />
         <x-form-textarea class="mb-3" name="description" label="{{ __('Description') }}" />
         @endbind

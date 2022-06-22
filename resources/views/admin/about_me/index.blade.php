@@ -11,6 +11,7 @@
     @foreach($aboutMe as $biography)
         <tr>
             <td>{{$biography->title}}</td>
+            <td><img height="100" src="/storage/about_me/{{$biography->img}}"></td>
             <td>
                 <x-form action="{{route('about_me.destroy', $biography)}}" method="post">
                     <a class="btn btn-primary" href="{{ route('about_me.edit', $biography) }}">{{ __('Edit') }}</a>

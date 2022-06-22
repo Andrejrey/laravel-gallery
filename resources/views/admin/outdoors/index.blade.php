@@ -9,7 +9,8 @@
 <table class="table table-striped">
     @foreach($outdoors as $outdoor)
     <tr>
-        <td>{{$outdoor->filename}}</td>
+        <td>{{$outdoor->title}}</td>
+        <td><img height="100" src="/storage/outdoor/{{$outdoor->filename}}"></td>
         <td>
             <x-form action="{{route('outdoor.destroy', $outdoor)}}" method="post">
                 <a class="btn btn-primary" href="{{ route('outdoor.edit', $outdoor)}}">{{ __('Edit') }}</a>

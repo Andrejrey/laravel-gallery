@@ -7,6 +7,7 @@ use App\Models\Indoor;
 use App\Http\Requests\StoreIndoorRequest;
 use App\Http\Requests\UpdateIndoorRequest;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class IndoorController extends Controller
 {
@@ -39,7 +40,16 @@ class IndoorController extends Controller
      */
     public function store(StoreIndoorRequest $request)
     {
-        Indoor::create( $request->validated());
+        $validated = $request->validated();
+
+        $file = $request->file('filename');
+        if($file) {
+            $imgName = $file->hashName();
+            Storage::disk('indoor')->putFileAs('', $file, $imgName);
+            $validated['filename'] = $imgName;
+        }
+
+        Indoor::create($validated);
         return redirect('/indoor')->with('success', 'Indoor Image created successfully' );
     }
 
@@ -74,7 +84,16 @@ class IndoorController extends Controller
      */
     public function update(UpdateIndoorRequest $request, Indoor $indoor)
     {
-        $indoor->update($request->validated());
+        $validated = $request->validated();
+
+        $file = $request->file('filename');
+        if($file) {
+            $imgName = $file->hashName();
+            Storage::disk('indoor')->putFileAs('', $file, $imgName);
+            $validated['filename'] = $imgName;
+        }
+
+        $indoor->update($validated);
         return redirect('/indoor')->with('success', 'Indoor Image updated successfully');
     }
 

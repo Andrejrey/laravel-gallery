@@ -8,6 +8,7 @@ use App\Models\Outdoor;
 use App\Http\Requests\StoreOutdoorRequest;
 use App\Http\Requests\UpdateOutdoorRequest;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class OutdoorController extends Controller
 {
@@ -40,7 +41,16 @@ class OutdoorController extends Controller
      */
     public function store(StoreOutdoorRequest $request)
     {
-        Outdoor::create( $request->validated());
+        $validated = $request->validated();
+
+        $file = $request->file('filename');
+        if($file) {
+            $imgName = $file->hashName();
+            Storage::disk('outdoor')->putFileAs('', $file, $imgName);
+            $validated['filename'] = $imgName;
+        }
+
+        Outdoor::create($validated);
         return redirect('/outdoor')->with('success', 'Outdoor Image created successfully' );
     }
 
@@ -75,7 +85,16 @@ class OutdoorController extends Controller
      */
     public function update(UpdateOutdoorRequest $request, Outdoor $outdoor)
     {
-        $outdoor->update($request->validated());
+        $validated = $request->validated();
+
+        $file = $request->file('filename');
+        if($file) {
+            $imgName = $file->hashName();
+            Storage::disk('outdoor')->putFileAs('', $file, $imgName);
+            $validated['filename'] = $imgName;
+        }
+
+        $outdoor->update($validated);
         return redirect('/outdoor')->with('success', 'Outdoor Image updated successfully');
     }
 

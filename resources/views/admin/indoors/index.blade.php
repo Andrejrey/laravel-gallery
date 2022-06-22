@@ -10,7 +10,8 @@
 <table class="table table-striped">
     @foreach($indoors as $indoor)
     <tr>
-        <td>{{$indoor->filename}}</td>
+        <td>{{$indoor->title}}</td>
+        <td><img height="100" src="/storage/indoor/{{$indoor->filename}}"></td>
         <td>
             <x-form action="{{route('indoor.destroy', $indoor)}}" method="post">
                 <a class="btn btn-primary" href="{{ route('indoor.edit', $indoor) }}">{{ __('Edit') }}</a>
