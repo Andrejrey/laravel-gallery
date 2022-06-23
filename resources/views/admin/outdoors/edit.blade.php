@@ -1,15 +1,25 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Update Contacts</h1>
-
-    <x-form method="put" action="{{ route('outdoor.update', $outdoor) }}" enctype="multipart/form-data">
-        @csrf
-        @bind($outdoor)
-        <x-form-input type="file" class="mb-3" name="filename" label="{{ __('Imagedatei') }}:" />
-        <x-form-input type="text" class="mb-3" name="title" label="{{ __('Title') }}" />
-        <x-form-textarea class="mb-3" name="description" label="{{ __('Description') }}" />
-        @endbind
-        <x-form-submit class="mt-3">{{ __('Update') }}</x-form-submit>
-    </x-form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <h6 class="card-header bg-dark bg-gradient text-white">Update Outdoor Image</h6>
+                    <x-form method="put" action="{{ route('outdoor.update', $outdoor) }}" enctype="multipart/form-data">
+                        @csrf
+                        @bind($outdoor)
+                        <div class="mb-3 mt-3">
+                        <img height="150" src="/storage/outdoor/{{$outdoor->filename}}">
+                        </div>
+                        <x-form-input type="file" class="mb-3" name="filename" label="{{ __('Imagedatei') }}:" />
+                        <x-form-input type="text" class="mb-3" name="title" label="{{ __('Title') }}" />
+                        <x-form-textarea class="mb-3" name="description" label="{{ __('Description') }}" />
+                        @endbind
+                        <x-form-submit class="mt-3 btn-success">{{ __('Update') }}</x-form-submit>
+                    </x-form>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
