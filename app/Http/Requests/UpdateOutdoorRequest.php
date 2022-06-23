@@ -24,8 +24,8 @@ class UpdateOutdoorRequest extends FormRequest
     public function rules()
     {
         return [
-            'filename'  => 'required',
-            'title'    => '',
+            'filename'  => 'nullable|image',
+            'title'    => 'required',
             'description'  => ''
         ];
     }

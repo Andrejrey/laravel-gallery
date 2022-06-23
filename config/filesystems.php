@@ -34,6 +34,16 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
             'throw' => false,
+            'permissions' => [
+                'file' => [
+                    'public' => 0666,
+                    'private' => 0600,
+                ],
+                'dir' => [
+                    'public' => 0777,
+                    'private' => 0700,
+                ],
+            ],
         ],
 
         'public' => [
@@ -43,6 +53,32 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+
+        'indoor' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/indoor'),
+            'url' => env('APP_URL').'/storage/indoor',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'outdoor' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/outdoor'),
+            'url' => env('APP_URL').'/storage/outdoor',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'about_me' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/about_me'),
+            'url' => env('APP_URL').'/storage/about_me',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+
 
         's3' => [
             'driver' => 's3',

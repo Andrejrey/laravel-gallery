@@ -6,6 +6,7 @@ use App\Models\AboutMe;
 use App\Http\Requests\StoreAboutMeRequest;
 use App\Http\Requests\UpdateAboutMeRequest;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class AboutMeController extends Controller
 {
@@ -27,7 +28,7 @@ class AboutMeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.about_me.create');
     }
 
     /**
@@ -38,7 +39,17 @@ class AboutMeController extends Controller
      */
     public function store(StoreAboutMeRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $file = $request->file('img');
+        if($file) {
+            $imgName = $file->hashName();
+            Storage::disk('about_me')->putFileAs('', $file, $imgName);
+            $validated['img'] = $imgName;
+        }
+
+        AboutMe::create($validated);
+        return redirect('/about_me')->with('success', 'About Me created successfully');
     }
 
     /**
@@ -72,7 +83,18 @@ class AboutMeController extends Controller
      */
     public function update(UpdateAboutMeRequest $request, AboutMe $aboutMe)
     {
-        $aboutMe->update($request->validated());
+        $validated = $request->validated();
+
+        $file = $request->file('img');
+        if($file) {
+            $imgName = $file->hashName();
+            Storage::disk('about_me')->putFileAs('', $file, $imgName);
+            $validated['img'] = $imgName;
+        } else {
+            unset($validated['filename']);
+        }
+
+        $aboutMe->update($validated);
         return redirect('/about_me')->with('success', 'About Me updated successfully');
     }
 

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 
+
 use App\Models\Outdoor;
 use App\Http\Requests\StoreOutdoorRequest;
 use App\Http\Requests\UpdateOutdoorRequest;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class OutdoorController extends Controller
 {
@@ -17,7 +19,7 @@ class OutdoorController extends Controller
      */
     public function index()
     {
-        $outdoors = Outdoor::all();
+        $outdoors = Outdoor::paginate(6);
         return view('admin.outdoors.index', compact('outdoors'));
     }
 
@@ -28,7 +30,7 @@ class OutdoorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.outdoors.create');
     }
 
     /**
@@ -39,7 +41,17 @@ class OutdoorController extends Controller
      */
     public function store(StoreOutdoorRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $file = $request->file('filename');
+        if($file) {
+            $imgName = $file->hashName();
+            Storage::disk('outdoor')->putFileAs('', $file, $imgName);
+            $validated['filename'] = $imgName;
+        }
+
+        Outdoor::create($validated);
+        return redirect('/outdoor')->with('success', 'Outdoor Image created successfully' );
     }
 
     /**
@@ -73,7 +85,18 @@ class OutdoorController extends Controller
      */
     public function update(UpdateOutdoorRequest $request, Outdoor $outdoor)
     {
-        $outdoor->update($request->validated());
+        $validated = $request->validated();
+
+        $file = $request->file('filename');
+        if($file) {
+            $imgName = $file->hashName();
+            Storage::disk('outdoor')->putFileAs('', $file, $imgName);
+            $validated['filename'] = $imgName;
+        } else {
+            unset($validated['filename']);
+        }
+
+        $outdoor->update($validated);
         return redirect('/outdoor')->with('success', 'Outdoor Image updated successfully');
     }
 
