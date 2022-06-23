@@ -1,4 +1,4 @@
-<ul class="navbar-nav me-auto text-white">
+<ul class="navbar-nav me-auto">
     @auth
     <li class="nav-item">
         <a class="nav-link text-white" href="{{ route('home') }}">{{ __('Home') }}</a>
