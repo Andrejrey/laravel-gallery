@@ -17,7 +17,7 @@ class AboutMeController extends Controller
      */
     public function index()
     {
-        $aboutMe = AboutMe::all();
+        $aboutMe = AboutMe::paginate(10);
         return view('admin.about_me.index', compact('aboutMe'));
     }
 

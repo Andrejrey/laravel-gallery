@@ -18,7 +18,7 @@ class IndoorController extends Controller
      */
     public function index()
     {
-        $indoors = Indoor::all();
+        $indoors = Indoor::paginate(6);
         return view('admin.indoors.index', compact('indoors'));
     }
 

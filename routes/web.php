@@ -21,7 +21,7 @@ use App\Http\Controllers\OutdoorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('start');
 });
 
 Auth::routes();
