@@ -8,24 +8,24 @@
             </a>
         </div>
         <table class="table table-striped">
-            <tr>
-                <td>Image:</td>
-                <td>Title:</td>
-                <td></td>
-            </tr>
+                <tr class="bg-dark bg-gradient">
+                    <td class="text-white">Image:</td>
+                    <td class="text-white">Title:</td>
+                    <td></td>
+                </tr>
             @foreach($outdoors as $outdoor)
-            <tr>
-                <td><img height="100" src="/storage/outdoor/{{$outdoor->filename}}"></td>
-                <td>{{$outdoor->title}}</td>
-                <td>
-                    <x-form class="text-end" action="{{route('outdoor.destroy', $outdoor)}}" method="post">
-                        <a class="btn btn-primary" href="{{ route('outdoor.edit', $outdoor)}}">{{ __('Edit') }}</a>
-                        @csrf
-                        @method('delete')
-                        <x-form-submit type="submit" class="btn btn-danger delsoft">{{ __('Delete') }}</x-form-submit>
-                    </x-form>
-                </td>
-            </tr>
+                <tr class="align-middle">
+                    <td><img height="100" src="/storage/outdoor/{{$outdoor->filename}}"></td>
+                    <td>{{$outdoor->title}}</td>
+                    <td>
+                        <x-form class="text-end" action="{{route('outdoor.destroy', $outdoor)}}" method="post">
+                            <a class="btn btn-primary" href="{{ route('outdoor.edit', $outdoor)}}">{{ __('Edit') }}</a>
+                            @csrf
+                            @method('delete')
+                            <x-form-submit type="submit" class="btn btn-danger delsoft">{{ __('Delete') }}</x-form-submit>
+                        </x-form>
+                    </td>
+                </tr>
             @endforeach
         </table>
     </div>

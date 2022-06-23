@@ -8,13 +8,13 @@
             </a>
         </div>
         <table class="table table-striped">
-            <tr>
-                <td>Image:</td>
-                <td>Title:</td>
+            <tr class="bg-dark bg-gradient">
+                <td class="text-white">Image:</td>
+                <td class="text-white">Title:</td>
                 <td></td>
             </tr>
             @foreach($aboutMe as $biography)
-                <tr>
+                <tr class="align-middle">
                     <td><img height="100" src="/storage/about_me/{{$biography->img}}"></td>
                     <td>{{$biography->title}}</td>
                     <td>

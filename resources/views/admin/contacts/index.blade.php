@@ -8,13 +8,13 @@
             </a>
         </div>
         <table class="table table-striped">
-        <tr>
-            <td>Subject:</td>
-            <td>E-mail:</td>
+        <tr class="bg-dark bg-gradient">
+            <td class="text-white">Subject:</td>
+            <td class="text-white">E-mail:</td>
             <td></td>
         </tr>
             @foreach($contacts as $contact)
-            <tr>
+            <tr class="align-middle">
                 <td>{{$contact->subject}}</td>
                 <td>{{$contact->email}}</td>
                 <td>
