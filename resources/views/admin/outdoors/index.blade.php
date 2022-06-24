@@ -38,6 +38,5 @@
         {{ $outdoors->links() }}
         </div>
     </div>
-
 @endsection
 
