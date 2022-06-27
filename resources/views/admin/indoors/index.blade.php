@@ -7,7 +7,7 @@
                     <h6 class="card-header bg-dark bg-gradient text-white">Indoor Images</h6>
                     <div  class="col-md-12 mt-4" style="margin-bottom: 10px;">
                         <a class="btn btn-success" href="{{route('indoor.create')}}">
-                            {{ __('Add Indoor Image') }}
+                            <i class="bi bi-plus-circle"></i> <span> {{ __('Add Intdoor Image') }}</span>
                         </a>
                     </div>
                     {{ $indoors->links() }}
@@ -24,10 +24,10 @@
 
                                 <td>
                                     <x-form class="text-end" action="{{route('indoor.destroy', $indoor)}}" method="post">
-                                        <a class="btn btn-primary" href="{{ route('indoor.edit', $indoor) }}">{{ __('Edit') }}</a>
+                                        <a class="btn btn-primary" href="{{ route('indoor.edit', $indoor) }}"><i class="bi bi-pencil-square"></i> <span>{{ __('Edit') }}</span></a>
                                         @csrf
                                         @method('delete')
-                                        <x-form-submit type="submit" class="btn btn-danger delsoft">{{ __('Delete') }}</x-form-submit>
+                                        <x-form-submit type="submit" class="btn btn-danger delsoft"><i class="bi bi-trash-fill"></i> <span>{{ __('Delete') }}</span></x-form-submit>
                                     </x-form>
                                 </td>
                             </tr>

@@ -9,7 +9,7 @@
                         <x-form-input type="file" class="mb-3" name="filename" label="{{ __('Imagedatei') }}:" />
                         <x-form-input type="text" class="mb-3" name="title" label="{{ __('Title') }}" />
                         <x-form-textarea class="mb-3" name="description" label="{{ __('Description') }}" />
-                        <x-form-submit class="mt-3 btn-success">{{ __('Add') }}</x-form-submit>
+                        <x-form-submit class="mt-3 btn-success"><i class="bi bi-plus-circle"></i> <span> {{ __('Add') }}</span></x-form-submit>
                     </x-form>
                 </div>
             </div>
