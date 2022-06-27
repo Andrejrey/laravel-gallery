@@ -8,8 +8,8 @@
                     <x-form method="put" action="{{ route('contact.update', $contact) }}" >
                         @csrf
                         @bind($contact)
-                        <x-form-input type="text" class="mb-3" name="subject" label="{{ __('Subject') }}" />
                         <x-form-input type="text" class="mb-3" name="email" label="{{ __('E-mail') }}" />
+                        <x-form-input type="text" class="mb-3" name="subject" label="{{ __('Subject') }}" />
                         <x-form-textarea class="mb-3" name="message" label="{{ __('Message') }}" />
                         @endbind
                         <x-form-submit class="mt-3 btn-success"><i class="bi bi-box-arrow-in-up"></i> <span> {{ __('Update') }}</span></x-form-submit>
