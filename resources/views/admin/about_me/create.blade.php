@@ -10,7 +10,7 @@
                         <x-form-input type="text" class="mb-3" name="subtitle" label="{{ __('Subtitle') }}" />
                         <x-form-textarea class="mb-3" name="text" label="{{ __('Text') }}" />
                         <x-form-input type="file" class="mb-3" name="img" label="{{ __('Imagedatei') }}:" />
-                        <x-form-submit class="mt-3 btn-success">{{ __('Create') }}</x-form-submit>
+                        <x-form-submit class="mt-3 btn-success"><i class="bi bi-plus-circle"></i> <span> {{ __('Add') }}</span></x-form-submit>
                     </x-form>
                 </div>
             </div>

@@ -16,7 +16,7 @@
                         </div>
                         <x-form-input type="file" class="mb-3" name="img" label="{{ __('Imagedatei') }}:" />
                         @endbind
-                        <x-form-submit class="mt-3 btn-success">{{ __('Update') }}</x-form-submit>
+                        <x-form-submit class="mt-3 btn-success"><i class="bi bi-box-arrow-in-up"></i> <span> {{ __('Update') }}</span></x-form-submit>
                     </x-form>
                 </div>
             </div>

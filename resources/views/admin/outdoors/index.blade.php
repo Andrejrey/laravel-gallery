@@ -7,7 +7,7 @@
                     <h6 class="card-header bg-dark bg-gradient text-white">Outdoor Images</h6>
                     <div class="col-md-12 mt-4" style="margin-bottom: 10px;">
                         <a class="btn btn-success" href="{{route('outdoor.create')}}">
-                            {{ __('Add Outdoor Image') }}
+                            <i class="bi bi-plus-circle"></i> <span> {{ __('Add Outdoor Image') }}</span>
                         </a>
                     </div>
                     {{ $outdoors->links() }}
@@ -26,7 +26,7 @@
                                             <a class="btn btn-primary" href="{{ route('outdoor.edit', $outdoor)}}"><i class="bi bi-pencil-square"></i> <span>{{ __('Edit') }}</span></a>
                                             @csrf
                                             @method('delete')
-                                            <x-form-submit type="submit" class="btn btn-danger delsoft">{{ __('Delete') }}</x-form-submit>
+                                            <x-form-submit type="submit" class="btn btn-danger delsoft"><i class="bi bi-trash-fill"></i> <span>{{ __('Delete') }}</span></x-form-submit>
                                         </x-form>
                                     </td>
                                 </tr>
