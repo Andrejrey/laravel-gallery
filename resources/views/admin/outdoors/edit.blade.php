@@ -9,7 +9,7 @@
                         @csrf
                         @bind($outdoor)
                         <div class="mb-3 mt-3">
-                        <img height="150" src="/storage/outdoor/{{$outdoor->filename}}">
+                        <img height="240" src="/storage/outdoor/{{$outdoor->filename}}">
                         </div>
                         <x-form-input type="file" class="mb-3" name="filename" label="{{ __('Imagedatei') }}:" />
                         <x-form-input type="text" class="mb-3" name="title" label="{{ __('Title') }}" />
