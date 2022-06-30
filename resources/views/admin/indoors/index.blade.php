@@ -24,10 +24,10 @@
 
                                 <td>
                                     <x-form class="text-end" action="{{route('indoor.destroy', $indoor)}}" method="post">
-                                        <a class="btn btn-primary" href="{{ route('indoor.edit', $indoor) }}"><i class="bi bi-pencil-square"></i> <span>{{ __('Edit') }}</span></a>
+                                        <a class="btn btn-primary" href="{{ route('indoor.edit', $indoor) }}"><i class="bi bi-pencil-square"></i> <span class="d-none d-md-inline">{{ __('Edit') }}</span></a>
                                         @csrf
                                         @method('delete')
-                                        <x-form-submit type="submit" class="btn btn-danger delsoft"><i class="bi bi-trash-fill"></i> <span>{{ __('Delete') }}</span></x-form-submit>
+                                        <x-form-submit type="submit" class="btn btn-danger delsoft"><i class="bi bi-trash-fill"></i> <span class="d-none d-md-inline">{{ __('Delete') }}</span></x-form-submit>
                                     </x-form>
                                 </td>
                             </tr>
