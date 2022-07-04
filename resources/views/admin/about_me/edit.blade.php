@@ -8,7 +8,7 @@
                     <x-form action="{{ route('about_me.update', $aboutMe) }}" enctype="multipart/form-data">
                         @method('put')
                         @bind($aboutMe)
-                        <div class="mb-3 mt-3">
+                        <div class="edit-img mb-3 mt-3">
                             <img height="240" src="/storage/about_me/{{$aboutMe->img}}">
                         </div>
                         <x-form-input type="file" class="mb-3" name="img" label="{{ __('Imagedatei') }}:" />
