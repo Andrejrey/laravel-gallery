@@ -8,7 +8,7 @@
                     <x-form method="put" action="{{ route('outdoor.update', $outdoor) }}" enctype="multipart/form-data">
                         @csrf
                         @bind($outdoor)
-                        <div class="mb-3 mt-3">
+                        <div class="edit-img mb-3 mt-3">
                         <img height="240" src="/storage/outdoor/{{$outdoor->filename}}">
                         </div>
                         <x-form-input type="file" class="mb-3" name="filename" label="{{ __('Imagedatei') }}:" />

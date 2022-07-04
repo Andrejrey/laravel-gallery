@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card text-center">
                     <h1 class="card-header bg-dark bg-gradient text-white">Welcome</h1>
-                    <img  class="m-auto" height="500" width="500" src="/images/reylogo.png">
+                    <img  class="m-auto" height="863"  src="/images/Background2.jpg">
                 </div>
             </div>
         </div>

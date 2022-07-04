@@ -167,3 +167,15 @@ nav{
         border-color: #b91d28;
     }
 }
+
+
+
+
+
+
+@media (max-width: 767px) {
+    .edit-img {
+        display: flex;
+        justify-content: center;
+    }
+}
