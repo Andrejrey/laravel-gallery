@@ -13,7 +13,7 @@ class StoreContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return auth()->check();
+        return true;
     }
 
     /**
@@ -26,7 +26,9 @@ class StoreContactRequest extends FormRequest
         return [
             'subject'  => 'required',
             'email'    => 'required|email',
-            'message'  => ''
+            'message'  => 'required',
+            'name'  => 'required',
+            'phone'  => 'required'
         ];
     }
 }

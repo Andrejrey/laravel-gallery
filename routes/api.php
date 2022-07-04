@@ -24,4 +24,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('outdoor', [ApiOutdoorController::class, 'index']);
 Route::get('indoor', [ApiIndoorController::class, 'index']);
 Route::get('about_me', [ApiAboutMeController::class, 'index']);
-Route::get('contact', [ApiContactController::class, 'index']);
+Route::post('contact', [ApiContactController::class, 'store']);
