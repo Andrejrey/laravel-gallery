@@ -23,7 +23,7 @@ class OutdoorResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'image' => $serverAdress . '/storage/outdoor/'. $this->filename,
+            'imgSrc' => $serverAdress . '/storage/outdoor/'. $this->filename,
             'description' => $this->description
         ];
     }
