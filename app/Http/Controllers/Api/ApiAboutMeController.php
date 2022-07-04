@@ -17,8 +17,8 @@ class ApiAboutMeController extends Controller
      */
     public function index()
     {
-        $data = AboutMe::all();
-        $data = AboutMeResource::collection($data);
+        $data = AboutMe::all()->first();
+        $data = new AboutMeResource($data);
         return response()->json($data);
     }
 
