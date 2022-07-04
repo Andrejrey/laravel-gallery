@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiOutdoorController;
+use App\Http\Controllers\Api\ApiIndoorController;
+use App\Http\Controllers\Api\ApiAboutMeController;
+use App\Http\Controllers\Api\ApiContactController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('outdoor', [ApiOutdoorController::class, 'index']);
+Route::get('indoor', [ApiIndoorController::class, 'index']);
+Route::get('about_me', [ApiAboutMeController::class, 'index']);
+Route::get('contact', [ApiContactController::class, 'index']);
