@@ -17,7 +17,7 @@ class ApiIndoorController extends Controller
      */
     public function index()
     {
-        $data = Indoor::all();
+        $data = Indoor::orderBy('id', 'desc')->get();
         $data = IndoorResource::collection($data);
         return response()->json($data);
     }

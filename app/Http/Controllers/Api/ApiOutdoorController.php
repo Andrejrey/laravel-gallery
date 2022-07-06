@@ -17,7 +17,7 @@ class ApiOutdoorController extends Controller
      */
     public function index()
     {
-        $data = Outdoor::all();
+        $data = Outdoor::orderBy('id', 'desc')->get();
         $data = OutdoorResource::collection($data);
         return response()->json($data);
     }
